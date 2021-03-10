@@ -1,0 +1,1 @@
+<p>Hola esta es el index del administrador</p>
