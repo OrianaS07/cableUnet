@@ -9,8 +9,15 @@ class Cable extends Model
 {
     use HasFactory;
 
+    //habilitamos asignacion masiva
+    protected $fillable = ['nombre','precio'];
+
     //relacion uno a uno - plan
     public function plan(){
         return $this->hasOne('App\Models\Plan');
+    }
+    public function nombre()
+    {
+        return 'cable';
     }
 }
