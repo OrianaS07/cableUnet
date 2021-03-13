@@ -49,7 +49,7 @@ class RouteServiceProvider extends ServiceProvider
 
                 //auth -> para que solo los usuarios autentificados puedan acceder
             Route::middleware('web','auth')
-                ->prefix('admin') //da el prefijo 'admin' para todas las rutas
+                ->prefix('admin') //da el prefijo 'admin' para todas las
                 ->namespace($this->namespace)
                 ->group(base_path('routes/admin.php'));
         });

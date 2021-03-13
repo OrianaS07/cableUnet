@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ProgramaController;
+use App\Http\Controllers\CanalController;
 
 Route::get('/', function () {
       return view('welcome');
@@ -12,4 +12,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/programacion', [ProgramaController::class, 'index'])->name('programas.index');
+Route::get('/programacion', [CanalController::class, 'index'])->name('canales.index');
