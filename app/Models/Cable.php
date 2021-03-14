@@ -10,7 +10,7 @@ class Cable extends Model
     use HasFactory;
 
     //habilitamos asignacion masiva
-    protected $fillable = ['nombre','precio'];
+    protected $fillable = ['nombre','precio','plan_id'];
 
     //relacion uno a uno - plan
     public function plan(){

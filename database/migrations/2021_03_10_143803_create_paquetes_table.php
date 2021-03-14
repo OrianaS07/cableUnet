@@ -17,7 +17,7 @@ class CreatePaquetesTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->float('precio');
-            $table->date('fecha');
+            $table->date('fecha')->nullable();
 
             $table->unsignedBigInteger('internet_id')->nullable();
             $table->unsignedBigInteger('cable_id')->nullable();

@@ -31,9 +31,9 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>
+                    <label name="plan_id">
                         Planes
-                        <select name="plan" class="form-control">
+                        <select name="plan_id" class="form-control">
                             @foreach ($planes as $plan)
                                 <option value="{{$plan->id}}">{{$plan->nombre}}</option>
                             @endforeach

@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\PaqueteController;
 use App\Http\Controllers\Admin\ServicioController;
+
 
 //----- RUTAS DE ADMINISTRADOR -----
 Route::get('', [HomeController::class,'index'])->name('admin.home');
@@ -23,3 +25,6 @@ Route::get('servicios/opcion', function () {
 Route::post('servicios/store/{tipo}', [ServicioController::class , 'store'])->name('admin.servicios.store');
 
 Route::put('servicios/update/{id}/{tipo}', [ServicioController::class , 'update'])->name('admin.servicios.update');
+
+// ------- RUTAS DE PAQUETES -----
+Route::resource('paquetes', PaqueteController::class)->names('admin.paquetes');

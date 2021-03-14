@@ -10,6 +10,8 @@ class Paquete extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id','fecha','created_at','update_at'];
+
     //relacion uno a muchos (inversa)
     public function internet(){
         return $this->belongsTo('App\Models\Internet');

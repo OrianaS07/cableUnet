@@ -246,9 +246,9 @@ return [
             'icon' => 'fab fa-fw fa-buffer',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Paquetes',
+            'route'  => 'admin.paquetes.index',
+            'icon' => 'fas fa-cubes',
         ],
         [
             'text'    => 'multilevel',
@@ -424,5 +424,5 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/9.-Other-Configuration
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
