@@ -2,8 +2,8 @@
     $links_nav = [
         [
             'name' => 'Inicio',
-            'route' => route('dashboard'),
-            'active'=> request()->routeIs('dashboard'),
+            'route' => route('paquetes.index'),
+            'active'=> request()->routeIs('paquetes.index'),
         ],
         [
             'name' => 'Prueba',
@@ -22,7 +22,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('home') }}">
+                    <a href="{{ route('paquetes.index') }}">
                         <p>unet<strong>Cable</strong></p>
                     </a>
                 </div>

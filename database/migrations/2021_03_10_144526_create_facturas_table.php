@@ -16,7 +16,8 @@ class CreateFacturasTable extends Migration
         Schema::create('facturas', function (Blueprint $table) {
             $table->id();
 
-            $table->date('fecha');
+            $table->integer('year');
+            $table->integer('mes');
             $table->float('monto');
 
             //llaves foraneas (user, paquete)

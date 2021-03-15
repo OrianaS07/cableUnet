@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PaqueteController;
+use App\Http\Controllers\Admin\PlanController;
 use App\Http\Controllers\Admin\ServicioController;
 
 
@@ -28,3 +29,6 @@ Route::put('servicios/update/{id}/{tipo}', [ServicioController::class , 'update'
 
 // ------- RUTAS DE PAQUETES -----
 Route::resource('paquetes', PaqueteController::class)->names('admin.paquetes');
+
+// ------- RUTAS DE PLANES -------
+Route::resource('plans', PlanController::class)->names('admin.plans');

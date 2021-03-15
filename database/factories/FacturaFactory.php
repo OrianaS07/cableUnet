@@ -24,7 +24,8 @@ class FacturaFactory extends Factory
     public function definition()
     {
         return [
-            'fecha' => $this->faker->date(),
+            'year' => $this->faker->year(),
+            'mes' => $this->faker->month(),
             'monto' => $this->faker->randomFloat(2,0,1000),
             'user_id' => User::all()->random()->id,
             'paquete_id' => Paquete::all()->random()->id
