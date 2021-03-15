@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CanalController;
+use App\Http\Controllers\PaqueteController;
 
-Route::get('/', function () {
-      return view('welcome');
-})->name('home');
+Route::get('/', [PaqueteController::class, 'index'])->name('paquetes.index');
+Route::get('paquetes/{paquete}', [PaqueteController::class, 'show'])->name('paquetes.show');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

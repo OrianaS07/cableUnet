@@ -85,7 +85,7 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
 
@@ -248,6 +248,11 @@ return [
         [
             'text' => 'Paquetes',
             'route'  => 'admin.paquetes.index',
+            'icon' => 'fas fa-cubes',
+        ],
+        [
+            'text' => 'Planes',
+            'route'  => 'admin.plans.index',
             'icon' => 'fas fa-cubes',
         ],
         [

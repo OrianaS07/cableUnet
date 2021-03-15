@@ -3,12 +3,9 @@
         <div id="programacion">
             <table>
                 @foreach ($canales as $canal)
-                    <tr>
-                        <td>
-                            {{$canal->programas}}
-                        </td>
-                    </tr>
-                    
+                   @foreach ($canal->programas as $programa)
+                       {{getType($programa->fecha)}}
+                   @endforeach
                 @endforeach
             
             </table>

@@ -9,6 +9,8 @@ class Plan extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nombre'];
+
      //relacion muchos a muchos - canal
     public function canales()
     {
