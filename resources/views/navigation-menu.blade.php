@@ -6,15 +6,15 @@
             'active'=> request()->routeIs('paquetes.index'),
         ],
         [
-            'name' => 'Prueba',
-            'route' => '#',
-            'active'=> false,
+            'name' => 'Programación',
+            'route' => route('programacion.index'),
+            'active'=> request()->routeIs('programacion.index'),
         ],
     ];
 @endphp
 
 
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow">
+<nav x-data="{ open: false }" class="bg-gray-800 border-b border-gray-100 shadow">
     
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,14 +23,14 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('paquetes.index') }}">
-                        <p>unet<strong>Cable</strong></p>
+                        <p class="text-4xl text-white">unet<strong>Cable</strong></p>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex text-gray-100">
                     @foreach ($links_nav as $link_nav)
-                    <x-jet-nav-link href="{{  $link_nav['route'] }}" :active=" $link_nav['active']">
+                    <x-jet-nav-link class='font-extrabold text-1xl' href="{{  $link_nav['route'] }}" :active=" $link_nav['active']">
                         {{ $link_nav['name']}}
                     </x-jet-nav-link>   
                     @endforeach
@@ -50,7 +50,7 @@
                                     </button>
                                 @else
                                     <span class="inline-flex rounded-md">
-                                        <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                        <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-semibold rounded-md text-gray-900 bg-white hover:text-gray-500 focus:outline-none transition ease-in-out duration-150">
                                             {{ Auth::user()->name }}
 
                                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -63,21 +63,15 @@
 
                             <x-slot name="content">
                                 <!-- Account Management -->
-                                <div class="block px-4 py-2 text-xs text-gray-400">
-                                    {{ __('Manage Account') }}
+                                <div class="block px-4 py-2 text-xs text-gray-900">
+                                    {{ __('Opciones de Usuario') }}
                                 </div>
-
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                    {{ __('Profile') }}
-                                </x-jet-dropdown-link>
 
                                 @can('admin.home')
                                 <x-jet-dropdown-link href="{{ route('admin.home') }}">
-                                    {{'Administracion'}}
+                                    {{'Opciones'}}
                                 </x-jet-dropdown-link>
                                 @endcan
-
-
 
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                     <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
@@ -94,15 +88,15 @@
                                     <x-jet-dropdown-link href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                                        {{ __('Log Out') }}
+                                        {{ __('Cerrar Sección') }}
                                     </x-jet-dropdown-link>
                                 </form>
                             </x-slot>
                         </x-jet-dropdown>   
                                            
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>                 
+                        <a href="{{ route('login') }}" class=" text-gray-300  font-extrabold text-1xl">Log in</a>
+                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-300 font-extrabold text-1xl">Register</a>                 
                     @endauth
 
                 </div>

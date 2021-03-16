@@ -1,7 +1,6 @@
-
-<x-app-layout>
-@include('programacion.index')
-    <div class="card bg-gray-dark">
+<x-app-layout>  
+    @include('programacion.index')
+    
         {{--Hora de la programacion--}}
         @php
             for ($i=0; $i<48; $i++){
@@ -14,20 +13,21 @@
                 }
             }
         @endphp
-        
-        <div class="card-header">
-            <h2 class="text-center">Programacion</h2>
+
+       
+        <div class="container shadow-xs rounded-md bg-gray-100">
+            <h2 class="text-center text-gray-600 m-4 text-5xl font-extrabold">PROGRAMACIÓN</h2>
         </div>
 
-        <div class="card-body">
-            <table class="table table-striped">
+        <div class=" container overflow-auto">
+            <table class="table border-collapse border-2 border-gray-100">
                 <thead>
-                    <tr>
-                        <td>Canal</td>
+                    <tr class="text-2xl">
+                        <th>Canal</th>
                         @for ($i=0; $i<48; $i++)
-                            <td> 
+                            <th> 
                             {{$horas[$i]}}
-                            </td>
+                            </th>
                         @endfor
                     </tr>
                 </thead>
@@ -35,7 +35,7 @@
                 {{--Mostrar la programacion--}} 
                 <tbody>
                     @foreach ($canales as $canal)
-                    <tr>
+                    <tr class="text-2xl">
                         <td><a href="{{route('programacion.canal', $canal->id)}}">{{$canal->nombre}}</a></td>
                         
                         @foreach ($canal->programas as $programa)
@@ -43,7 +43,7 @@
                             @if ($programa->fecha==$fecha)
                                 @for ($i=0; $i<48; $i++)
                                     @if (explode(':', $programa->hora)[0] == explode(':', $horas[$i])[0])
-                                        <td><a href="{{route('programacion.programa', $programa->id)}}">{{$programa->nombre}}</a></td>
+                                        <td ><a href="{{route('programacion.programa', $programa->id)}}">{{$programa->nombre}}</a></td>
                                         @else
                                             <td> </td>
                                     @endif
@@ -61,9 +61,6 @@
             </table>
 
         </div>
-        
+   
 
-
-
-    </div>
 </x-app-layout>

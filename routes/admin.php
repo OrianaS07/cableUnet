@@ -20,7 +20,7 @@ Route::get('servicios', [ServicioController::class, 'index'])->middleware('can:a
 
 Route::get('servicios/edit/{id}/{nombre}', [ServicioController::class, 'edit'])->middleware('can:admin.servicios.edit')->name('admin.servicios.edit');
 
-Route::delete('servicios/delete/{id}/{nombre}', [ServicioController::class, 'delete'])->middleware('can:admin.servicios.destroy')->name('admin.servicios.destroy');
+Route::delete('servicios/delete/{id}/{nombre}', [ServicioController::class, 'destroy'])->middleware('can:admin.servicios.destroy')->name('admin.servicios.destroy');
 
 Route::post('servicios/created', [ServicioController::class, 'created'])->middleware('can:admin.servicios.created')->name('admin.servicios.created');
 

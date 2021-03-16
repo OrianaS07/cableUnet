@@ -8,12 +8,6 @@ use App\Models\Canal;
 class CanalController extends Controller
 {
     public function index(){
-<<<<<<< HEAD
-        $canales = Canal::all();
-
-        return view('canales.index', compact('canales'));
-    }    
-=======
         return view('programacion.index');
     }
     
@@ -29,5 +23,4 @@ class CanalController extends Controller
     }
 
     
->>>>>>> feature-programacion
 }
