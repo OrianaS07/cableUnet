@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(RoleSeeder::class);
+
         $this->call(UserSeeder::class);
         $programas = Programa::factory(10)->create();
         $canales = Canal::factory(10)->create();

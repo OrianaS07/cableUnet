@@ -3,8 +3,9 @@
 @section('title', 'cableUnet')
 
 @section('content_header')
-    
-    <a class="btn btn-secondary btn-sm float-right" href="{{route('admin.paquetes.create')}}">Nuevo Paquete</a>
+    @can('admin.paquetes.create')
+        <a class="btn btn-secondary btn-sm float-right" href="{{route('admin.paquetes.create')}}">Nuevo Paquete</a>
+    @endcan
     <h1>Listado de Paquetes</h1>
     @if (session('info'))
         <div class="alert alert-success">

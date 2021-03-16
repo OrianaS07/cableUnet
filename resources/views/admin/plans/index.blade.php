@@ -3,7 +3,9 @@
 @section('title', 'cableUnet')
 
 @section('content_header')
-    <a class="btn btn-secondary btn-sm float-right" href="{{route('admin.plans.create')}}">Nuevo Plan</a>
+    @can('admin.plans.create')
+        <a class="btn btn-secondary btn-sm float-right" href="{{route('admin.plans.create')}}">Nuevo Plan</a>
+    @endcan
     <h1>Listado de Planes</h1>
 @stop
 
@@ -29,14 +31,18 @@
                             <td>{{$plan->id}}</td>
                             <td>{{$plan->nombre}}</td>
                             <td width="10px">
-                                <a class="btn btn-primary btn-sm" href="{{route('admin.plans.edit',$plan)}}">Editar</a>
+                                @can('admin.plans.edit')
+                                    <a class="btn btn-primary btn-sm" href="{{route('admin.plans.edit',$plan)}}">Editar</a>
+                                @endcan                                
                             </td>
                             <td width="10px">
-                                <form action="{{route('admin.plans.destroy',$plan)}}" method="POST">
-                                    @method('DELETE') 
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                                </form>
+                                @can('admin.plans.destroy')
+                                    <form action="{{route('admin.plans.destroy',$plan)}}" method="POST">
+                                        @method('DELETE') 
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                    </form>
+                                @endcan
                             </td>
                         </tr>
                     @endforeach

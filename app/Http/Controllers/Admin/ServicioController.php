@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\Validator;
 
 class ServicioController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:admin.servicios.index')->only('index');
+        $this->middleware('can:admin.servicios.edit')->only('edit','update','show');
+        $this->middleware('can:admin.servicios.created')->only('created','store');
+        $this->middleware('can:admin.servicios.destroy')->only('destroy');
+    }
+
     public function index()
     {
         //recuperar coleccion de servicios
