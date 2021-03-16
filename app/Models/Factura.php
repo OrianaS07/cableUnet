@@ -9,6 +9,10 @@ class Factura extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'mes', 'year', 'user_id', 'paquete_id', 'monto',
+    ];
+
     //relacion uno a muchos -user (inversa)
     public function user(){
         return $this->belongsTo('App\Models\User');

@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-body">
             <form action="{{route('admin.servicios.created')}}" method="POST">
                 @csrf

@@ -15,7 +15,7 @@
     @endif
 
     @if ($tipo=='cable')
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-body">
             <form action="{{route('admin.servicios.update',[$tipo,$servicio->id])}}" method="post">
                 @csrf
@@ -59,7 +59,7 @@
     @endif
 
     @if ($tipo=='internet')
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-body">
             <form action="{{route('admin.servicios.update',[$tipo,$servicio->id])}}" method="post">
                 @csrf
@@ -102,7 +102,7 @@
     @endif
 
     @if ($tipo=='telefonia')
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-body">
             <form action="{{route('admin.servicios.update',[$tipo,$servicio->id])}}" method="post">
                 @csrf

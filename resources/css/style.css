@@ -13,3 +13,7 @@
         @apply px-8;
     }
 }
+
+.color_bg_oscuro{
+    background: #121b54;
+}

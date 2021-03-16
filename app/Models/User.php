@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -64,5 +65,10 @@ class User extends Authenticatable
     //relacion uno a muchos -factura
     public function factura(){
         return $this->hasMany('App\Models\Factura');
+    }
+
+    public function adminlte_desc()
+    {
+        return $this->role;
     }
 }

@@ -12,7 +12,7 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-body">
 
             {!! Form::open(['route'=>'admin.plans.store','autocomplete' =>'off']) !!}

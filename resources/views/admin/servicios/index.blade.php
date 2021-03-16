@@ -5,7 +5,7 @@
 @section('content_header')
 
     @can('admin.servicios.created')
-        <a class="btn btn-secondary float-right" href="{{route('admin.servicios.opcion')}}">Crear nuevo servicio</a>   
+        <a class="btn btn-primary float-right" href="{{route('admin.servicios.opcion')}}">Crear nuevo servicio</a>   
     @endcan
     <h1>Lista de Servicios</h1>
 @stop
@@ -18,7 +18,7 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-header">
             <h3 class="text-center">Servicios de Cable</h3>
         </div>
@@ -41,13 +41,13 @@
                             <td>{{$cable->plan_id}}</td>
                             <td>{{$cable->precio}}</td>
                             <td width='10px'>
-                                @can('admin.servicios.edit', Model::class)
+                                @can('admin.servicios.edit')
                                     <a class="btn btn-primary btn-sm" href="{{route('admin.servicios.edit',[$cable->id, $cable->nombre()])}}">Editar</a>
                                 @endcan
                             </td>
                             <td width='10px'>
-                                @can('admin.servicios.destroy', Model::class)
-                                    <form action="{{route('admin.servicios.delete',[$cable->id, $cable->nombre()])}}" method="POST">
+                                @can('admin.servicios.destroy')
+                                    <form action="{{route('admin.servicios.destroy',[$cable->id, $cable->nombre()])}}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
@@ -62,7 +62,7 @@
         </div>
     </div>
     {{-- Servicios de Internet --}}
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-body">
             <h2 class="text-center">Servicios de Internet</h2>
             <table class="table table-striped">
@@ -89,7 +89,7 @@
                             </td>
                             <td width='10px'>
                                 @can('admin.servicios.destroy')
-                                   <form action="{{route('admin.servicios.delete',[$internet->id, $internet->nombre()])}}" method="POST">
+                                   <form action="{{route('admin.servicios.destroy',[$internet->id, $internet->nombre()])}}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
@@ -104,7 +104,7 @@
         </div>
     </div>
     {{-- Servicios de Telefonia --}}
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-body">
             <h2 class="text-center">Servicios de Telefonia</h2>
             <table class="table table-striped">
@@ -130,8 +130,8 @@
                                 @endcan
                             </td>
                             <td width='10px'>
-                                @can('admin.servicios.destroy', Model::class)
-                                    <form action="{{route('admin.servicios.delete',[$cable->id, $cable->nombre()])}}" method="POST">
+                                @can('admin.servicios.destroy')
+                                    <form action="{{route('admin.servicios.destroy',[$cable->id, $cable->nombre()])}}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

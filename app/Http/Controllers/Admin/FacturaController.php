@@ -16,7 +16,7 @@ class FacturaController extends Controller
     {
         $this->middleware('can:admin.facturas.index')->only('index');
         $this->middleware('can:admin.facturas.edit')->only('edit','update','show');
-        $this->middleware('can:admin.facturas.created')->only('create','store');
+        $this->middleware('can:admin.facturas.create')->only('create','store');
         $this->middleware('can:admin.facturas.destroy')->only('destroy');
     }
     /**
@@ -37,7 +37,8 @@ class FacturaController extends Controller
      */
     public function create()
     {
-        //
+        $paquetes = Paquete::all();
+        return view('admin.facturas.create',compact('paquetes'));
     }
 
     /**
@@ -48,7 +49,18 @@ class FacturaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $paque = Paquete::find($request->paquete);
+        $monto = Internet::find($paque->internet_id)->precio + Cable::find($paque->cable_id)->precio + Telefonia::find($paque->telefonia_id)->precio;
+
+        $factura = Factura::create([
+            'mes' => $request->mes,
+            'year' => 2021,
+            'user_id' => auth()->user()->id,
+            'paquete_id' => $request->paquete,
+            'monto' => $monto,
+        ]);
+        
+        return redirect()->route('admin.facturas.show',$factura);
     }
 
     /**
@@ -88,7 +100,7 @@ class FacturaController extends Controller
     {
         //
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *

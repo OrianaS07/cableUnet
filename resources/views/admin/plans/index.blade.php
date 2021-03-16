@@ -4,7 +4,7 @@
 
 @section('content_header')
     @can('admin.plans.create')
-        <a class="btn btn-secondary btn-sm float-right" href="{{route('admin.plans.create')}}">Nuevo Plan</a>
+        <a class="btn btn-primary float-right" href="{{route('admin.plans.create')}}">Nuevo Plan</a>
     @endcan
     <h1>Listado de Planes</h1>
 @stop
@@ -15,7 +15,7 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-body">
             <table class="table table-striped">
                 <thead>

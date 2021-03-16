@@ -44,7 +44,7 @@ class ServicioController extends Controller
         
     }
 
-    public function delete($id, $nombre)
+    public function destroy($id, $nombre)
     {
         if($nombre == 'internet')$servicio = Internet::find($id);
         if($nombre == 'cable') $servicio = Cable::find($id);
@@ -67,20 +67,20 @@ class ServicioController extends Controller
         
         if($tipo == 'internet'){
             //validacion
-            // $request->validate([
-            //      'nombre' => 'required',
-            //      'velocidad' => 'requeried',
-            //      'precio' => 'required'
-            // ]);
+            $request->validate([
+                  'nombre' => 'required',
+                 'velocidad' => 'requeried',
+                 'precio' => 'required'
+            ]);
             $internet = Internet::create($request->all());
             return redirect()->route('admin.servicios.edit',[$internet, $tipo])->with('info','El Servicio se Creo con exito');
         }
         if($tipo == 'cable') {
-            // $request->validate([
-            //      'nombre' => 'required',
-            //      'velocidad' => 'requeried',
-            //      'precio' => 'required'
-            // ]);
+             $request->validate([
+                 'nombre' => 'required',
+                  'velocidad' => 'requeried',
+                 'precio' => 'required'
+             ]);
 
             $cable = Cable::create($request->all());
 
@@ -88,11 +88,11 @@ class ServicioController extends Controller
             return redirect()->route('admin.servicios.edit',[$cable,$tipo])->with('info','El Servicio se Creo con exito');
         }
         if($tipo == 'telefonia') {
-            // $request->validate([
-            //      'nombre' => 'required',
-            //      'velocidad' => 'requeried',
-            //      'precio' => 'required'
-            // ]);
+            $request->validate([
+                  'nombre' => 'required',
+                  'velocidad' => 'requeried',
+                  'precio' => 'required'
+            ]);
             $telefonia = Telefonia::create($request->all());
             return redirect()->route('admin.servicios.edit',[$telefonia, $tipo])->with('info','El Servicio se Creo con exito');
         }
@@ -104,33 +104,33 @@ class ServicioController extends Controller
         if($tipo == 'internet'){
             $servicio = Internet::find($id);
             //validacion
-            // $request->validate([
-            //      'nombre' => 'required',
-            //      'velocidad' => 'requeried',
-            //      'precio' => 'required'
-            // ]);
+             $request->validate([
+                'nombre' => 'required',
+                'velocidad' => 'requeried',
+                'precio' => 'required'
+            ]);
             $servicio->update($request->all());
             return redirect()->route('admin.servicios.edit',[$servicio, $tipo])->with('info','El Servicio se Actualizo con exito');
         }
         if($tipo == 'cable') {
             $servicio = Cable::find($id);
             //validacion
-            // $request->validate([
-            //      'nombre' => 'required',
-            //      'velocidad' => 'requeried',
-            //      'precio' => 'required'
-            // ]);
+            $request->validate([
+                 'nombre' => 'required',
+                 'velocidad' => 'requeried',
+                'precio' => 'required'
+            ]);
             $servicio->update($request->all());
             return redirect()->route('admin.servicios.edit',[$servicio, $tipo])->with('info','El Servicio se Actualizo con exito');
         }
         if($tipo == 'telefonia') {
             $servicio = Telefonia::find($id);
             //validacion
-            // $request->validate([
-            //      'nombre' => 'required',
-            //      'velocidad' => 'requeried',
-            //      'precio' => 'required'
-            // ]);
+            $request->validate([
+                  'nombre' => 'required',
+                 'velocidad' => 'requeried',
+                 'precio' => 'required'
+            ]);
             $servicio->update($request->all());
             return redirect()->route('admin.servicios.edit',[$servicio, $tipo])->with('info','El Servicio se Actualizo con exito');;
         }
