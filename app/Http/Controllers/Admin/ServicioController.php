@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class ServicioController extends Controller
 {
+    //permisos de los diferentes metodos
     public function __construct()
     {
         $this->middleware('can:admin.servicios.index')->only('index');

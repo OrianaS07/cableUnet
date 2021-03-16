@@ -9,6 +9,7 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+    //permisos de los diferentes metodos
     public function __construct()
     {
         $this->middleware('can:admin.users.index')->only('index');

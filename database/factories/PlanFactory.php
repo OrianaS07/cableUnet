@@ -23,7 +23,7 @@ class PlanFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $this->faker->unique()->word(20)
+            'nombre' => $this->faker->unique()->city()
         ];
     }
 }

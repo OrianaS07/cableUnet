@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-
+        //creo usuarios aleatorios
          User::create([
              'name' => 'Prueba de Datos',
              'email' => 'prueba@prueba.com',

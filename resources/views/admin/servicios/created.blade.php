@@ -104,7 +104,6 @@
         <div class="card-body">
             <form action="{{route('admin.servicios.store',$tipo)}}" method="POST">
                 @csrf
-                @method('put')
                 {{-- elegir el tipo de servicios --}}
                 <div class="form-group">
                     <label>

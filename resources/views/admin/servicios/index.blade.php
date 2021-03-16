@@ -11,13 +11,14 @@
 @stop
 
 @section('content')
-    {{-- poner una lista y que sellecione que servicios quiere ver y asi mostrar o dejar asi --}}
-    {{-- Servicios de Cable --}}
+    {{-- poner una lista y que seleccione que servicios quiere ver y asi mostrar o dejar asi --}}
+    {{-- Mensaje de Session --}}
     @if (session('info'))
         <div class="alert alert-success">
             <strong>{{session('info')}}</strong>
         </div>
     @endif
+    {{-- Servicios de Cable --}}
     <div class="card bg-gray-dark">
         <div class="card-header">
             <h3 class="text-center">Servicios de Cable</h3>
@@ -131,7 +132,7 @@
                             </td>
                             <td width='10px'>
                                 @can('admin.servicios.destroy')
-                                    <form action="{{route('admin.servicios.destroy',[$cable->id, $cable->nombre()])}}" method="POST">
+                                    <form action="{{route('admin.servicios.destroy',[$telefonia->id, $telefonia->nombre()])}}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

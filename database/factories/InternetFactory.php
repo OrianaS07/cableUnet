@@ -23,7 +23,7 @@ class InternetFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $this->faker->unique()->word(20),
+            'nombre' => $this->faker->unique()->streetSuffix(),
             'velocidad' => $this->faker->numberBetween(100,900),
             'precio' => $this->faker->randomFloat(2,0,1000)
         ];

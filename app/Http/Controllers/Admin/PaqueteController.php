@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class PaqueteController extends Controller
 {
+    //permisos de los diferentes metodos
     public function __construct()
     {
         $this->middleware('can:admin.paquetes.index')->only('index');

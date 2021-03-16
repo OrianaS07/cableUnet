@@ -28,7 +28,7 @@ class PaqueteFactory extends Factory
     {
         return [
             //llenar que campos y con que tipo de datos de prueba llenar
-            'nombre' => $this->faker->unique()->word(20),
+            'nombre' => $this->faker->unique()->company(),
             'precio' => $this->faker->randomFloat(2,0,1000),
             'fecha' => $this->faker->date('Y-m-d','now'),
 

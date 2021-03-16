@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 class FacturaController extends Controller
 {
+    //permisos de los diferentes metodos
     public function __construct()
     {
         $this->middleware('can:admin.facturas.index')->only('index');

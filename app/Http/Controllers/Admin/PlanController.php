@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {
+    //permisos de los diferentes metodos
     public function __construct()
     {
         $this->middleware('can:admin.plans.index')->only('index');
