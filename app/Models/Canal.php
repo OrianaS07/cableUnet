@@ -12,8 +12,9 @@ class Canal extends Model
     //relacion muchos a muchos - programa
     public function programas()
     {
-        return $this->belongsToMany('App\Models\Programa');
+        return $this->belongsToMany('App\Models\Programa')->orderBy('fecha');
     }
+
     //relacion muchos a muchos - Plan
     public function plans()
     {

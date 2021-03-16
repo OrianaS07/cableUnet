@@ -24,8 +24,8 @@ class ProgramaFactory extends Factory
         return [
             'nombre' => $this->faker->unique()->word(20),
             'informacion' => $this->faker->text(150),
-            'fecha' => $this->faker->date(),
-            'hora' => $this->faker->time()
+            'fecha'=> $this->faker->date(),
+            'hora'=> $this->faker->time()
         ];
     }
 }
