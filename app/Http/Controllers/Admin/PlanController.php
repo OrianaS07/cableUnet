@@ -13,7 +13,7 @@ class PlanController extends Controller
     {
         $this->middleware('can:admin.plans.index')->only('index');
         $this->middleware('can:admin.plans.edit')->only('edit','update','show');
-        $this->middleware('can:admin.plans.created')->only('create','store');
+        $this->middleware('can:admin.plans.create')->only('create','store');
         $this->middleware('can:admin.plans.destroy')->only('destroy');
     }
     /**

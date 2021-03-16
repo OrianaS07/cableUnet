@@ -1,12 +1,12 @@
-<div class="card">
+<div class="card bg-gray-dark">
     <div class="card-body">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>NOMBRE</td>
-                    <td>EMAIL</td>
-                    <td></td>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>EMAIL</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -16,7 +16,7 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>
-                            <a href="{{route('admin.users.edit',$user)}}" class="btn btn-primary">Editar</a>
+                            <a href="{{route('admin.users.edit',$user)}}" class="btn bg-lime text-black font-bold">Editar</a>
                         </td>
                     </tr>
                 @endforeach

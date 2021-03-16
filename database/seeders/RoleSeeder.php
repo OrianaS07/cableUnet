@@ -32,7 +32,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.servicios.index'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'admin.servicios.created'])->assignRole($role1);
         Permission::create(['name' => 'admin.servicios.edit'])->assignRole($role1);
-        Permission::create(['name' => 'admin.servicios.delete'])->assignRole($role1);
+        Permission::create(['name' => 'admin.servicios.destroy'])->assignRole($role1);
 
         //permisos de paquetes
         Permission::create(['name' => 'admin.paquetes.index'])->syncRoles([$role1,$role2]);
@@ -49,9 +49,9 @@ class RoleSeeder extends Seeder
         //permisos de facturas
         Permission::create(['name' => 'admin.facturas.index'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'admin.facturas.show'])->syncRoles([$role1,$role2]);
+        Permission::create(['name' => 'admin.facturas.create'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'admin.facturas.edit'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'admin.facturas.destroy'])->syncRoles([$role1,$role2]);
-
 
     }
 }

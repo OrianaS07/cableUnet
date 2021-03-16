@@ -12,7 +12,7 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-body">
             <p class="h5">Nombre: </p>
             <p class="form-control">{{$user->name}}</p>
@@ -26,7 +26,7 @@
                         </label>
                     </div>
                 @endforeach
-                {!! Form::submit('Asignar Rol', ['class'=>'btn btn-primary mt-2']) !!}
+                {!! Form::submit('Asignar Rol', ['class'=>'btn bg-lime mt-2']) !!}
             {!! Form::close() !!}
         </div>
     </div>

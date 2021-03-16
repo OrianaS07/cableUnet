@@ -15,7 +15,7 @@ class PaqueteController extends Controller
     {
         $this->middleware('can:admin.paquetes.index')->only('index');
         $this->middleware('can:admin.paquetes.edit')->only('edit','update','show');
-        $this->middleware('can:admin.paquetes.created')->only('create','store');
+        $this->middleware('can:admin.paquetes.create')->only('create','store');
         $this->middleware('can:admin.paquetes.destroy')->only('destroy');
     }
 

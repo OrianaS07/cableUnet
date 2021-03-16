@@ -4,7 +4,7 @@
 
 @section('content_header')
     @can('admin.paquetes.create')
-        <a class="btn btn-secondary btn-sm float-right" href="{{route('admin.paquetes.create')}}">Nuevo Paquete</a>
+        <a class="btn btn-primary  float-right " href="{{route('admin.paquetes.create')}}">Nuevo Paquete</a>
     @endcan
     <h1>Listado de Paquetes</h1>
     @if (session('info'))

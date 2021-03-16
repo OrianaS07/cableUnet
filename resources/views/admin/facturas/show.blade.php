@@ -8,7 +8,7 @@
 
 @section('content')
     
-    <div class="card">
+    <div class="card bg-gray-dark">
         <div class="card-body">
             <table>
                 <thead>
@@ -73,7 +73,7 @@
 
             </table>
                          
-            
+            <a href="{{route('admin.facturas.index')}}" class="btn btn-primary">Ir a Facturas</a>
         </div>
     </div>
 @stop

@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card bg-gray-dark">
     <div class="card-body">
         <table class="table table-striped">
             <thead>
