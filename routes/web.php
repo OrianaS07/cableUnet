@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CanalController;
 use App\Http\Controllers\ProgramaController;
+use App\Http\Controllers\SolicitudController;
+
 
 Route::get('/', function () {
       return view('welcome');
@@ -20,3 +22,7 @@ Route::get('programacion/mostrar', [CanalController::class, 'mostrar'])->name('p
 Route::get('programacion/canal/{id}', [CanalController::class, 'canal'])->name('programacion.canal');
 
 Route::get('programacion/programa/{id}', [ProgramaController::class, 'programa'])->name('programacion.programa');
+
+Route::get('solicitudes/cambio_paquete', [SolicitudController::class, 'solicitud'])->name('solicitudes.cambio_paquete');
+
+Route::post('/', [SolicitudController::class, 'procesar_solicitud'])->name('solicitudes.procesar');
