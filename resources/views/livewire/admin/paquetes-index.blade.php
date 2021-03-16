@@ -16,16 +16,20 @@
                         <td>{{$paquete->id}}</td>
                         <td>{{$paquete->nombre}}</td>
                         <td>{{$paquete->precio}}</td>
-                        <td with="10px">
-                            <a class="btn btn-primary btn-sm"  href="{{route('admin.paquetes.edit',$paquete)}}">Editar</a>
+                        <td width="10px">
+                            @can('admin.paquetes.edit')
+                                <a class="btn btn-primary btn-sm"  href="{{route('admin.paquetes.edit',$paquete)}}">Editar</a>
+                            @endcan
                         </td>
-                        <td with="10px">
-                            <form action="{{route('admin.paquetes.destroy',$paquete)}}" method="POST">
-                                @method('DELETE')
-                                @csrf
-                                <button class="btn btn-danger btn-sm "  type="submit">Eliminar</button>
-
-                            </form>
+                        <td width="10px">
+                            @can('admin.paquetes.destroy')
+                                <form action="{{route('admin.paquetes.destroy',$paquete)}}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="btn btn-danger btn-sm "  type="submit">Eliminar</button>
+                                </form>
+                            @endcan
+                            
                         </td>
                     </tr>
                 @endforeach

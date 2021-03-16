@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:admin.plans.index')->only('index');
+        $this->middleware('can:admin.plans.edit')->only('edit','update','show');
+        $this->middleware('can:admin.plans.created')->only('create','store');
+        $this->middleware('can:admin.plans.destroy')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *
