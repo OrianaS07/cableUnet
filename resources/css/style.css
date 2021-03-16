@@ -1,6 +1,9 @@
 .container {
     @apply max-w-7xl mx-auto px-2;
 }
+body{
+    @apply bg-gray-800;
+}
 
 @media(min-width:640px) {
     .container {
@@ -14,6 +17,18 @@
     }
 }
 
-.color_bg_oscuro{
-    background: #121b54;
+.table{
+    @apply bg-gray-800;
+}
+
+.table th, .table td{
+    @apply border-gray-100 px-4 py-2 bg-gray-800;
+}
+
+.table th{
+    @apply text-gray-200 ;
+}
+
+.table td{
+    @apply bg-gray-800 text-gray-200;
 }

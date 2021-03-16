@@ -4,7 +4,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             @foreach ($paquetes as $paquete)
-                <article class="w-full h-60 bg-cover bg-center bg-red-500">
+                <article class="w-full h-40 bg-cover bg-center bg-gray-600">
                     <div class="w-full h-full px-8 flex flex-col justify-center ">
                         <h1 class="text-4xl text-white leading-8 font-bold">
                             <a href="{{route('paquetes.show',$paquete)}}">{{$paquete->nombre}}</a>
