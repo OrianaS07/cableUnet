@@ -7,9 +7,8 @@ use App\Models\Programa;
 
 class ProgramaController extends Controller
 {
-    public function index(){
-        $programas = Programa::all();
-
-        return view('programas.index', compact('programas'));
-    }    
+    public function programa($id){
+        $programa = Programa::find($id);
+        return view('programacion.programa', compact('programa'));
+    }
 }
