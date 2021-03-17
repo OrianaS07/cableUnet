@@ -9,6 +9,11 @@ use App\Models\solicitudCambio;
 
 class SolicitudController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:solicitudes.cambio_paquete')->only('solicitud');
+        $this->middleware('can:solicitudes.procesar')->only('procesar_solicitud');
+    }
     public function solicitud()
     {
         $paquetes = Paquete::all();

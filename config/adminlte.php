@@ -68,7 +68,7 @@ return [
     'usermenu_header' => true,
     'usermenu_header_class' => 'bg-lime',
     'usermenu_image' => false,
-    'usermenu_desc' => true,
+    'usermenu_desc' => false,
     'usermenu_profile_url' => false,
 
     /*
@@ -273,6 +273,12 @@ return [
             'route'        => 'admin.facturas.index',
             'icon' => 'fas fa-fw fa-clipboard',
             'can'       => 'admin.facturas.index'
+        ],
+        [
+            'text'       => 'Solicitud de Cambio',
+            'route'        => 'solicitudes.cambio_paquete',
+            'icon' => 'fas fa-fw fa-clipboard',
+            'can'       => 'solicitudes.cambio_paquete'
         ]
     ],
 

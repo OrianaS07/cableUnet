@@ -53,5 +53,8 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.facturas.edit'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'admin.facturas.destroy'])->syncRoles([$role1,$role2]);
 
+        //permisos de solicitudes de cambio
+        Permission::create(['name' => 'solicitudes.cambio_paquete'])->assignRole($role2);
+        Permission::create(['name' => 'solicitudes.procesar'])->assignRole($role2);
     }
 }

@@ -18,12 +18,12 @@ class CreateSolicitudCambiosTable extends Migration
 
             $table->unsignedBigInteger('nuevo_pquete_id');
 
-            $table->unsignedBigInteger('user_id')->unique();
-            $table->foreing('user_id')
-                ->reference('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate();
+            $table->unsignedBigInteger('user_id');
+            
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
                 
             $table->timestamps();
         });

@@ -11,14 +11,15 @@
         <div class="class-body ">
             <form action="{{route('solicitudes.procesar')}}" method="POST">
                 @csrf
-                <label>Paquetes disponibles</label>
-                <select>
+                <label>Paquetes disponibles
+                <select class="form-control">
                     @foreach ($paquetes as $paquete)
                         <option name="paquete" value="{{$paquete->id}}">{{$paquete->nombre}}</option>
                     @endforeach
                 </select>
+                </label>
                 <br>
-                <button type="submit">Solicitar cambio</button>
+                <button class="btn btn-primary" type="submit">Solicitar cambio</button>
             </form>
             
         </div>
